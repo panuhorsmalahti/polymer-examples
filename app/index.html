@@ -39,9 +39,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <body unresolved class="fullbleed layout vertical">
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
-    <div>Examples</div>
     <div>
-      <display-miles km="42.195"></display-miles>
+      Miles: <display-miles km="42.195"></display-miles>
+      <br/>
+      <kilometers-to-miles km="42.195" miles="{{ miles }}"></kilometers-to-miles>
+      Mpg: <display-mpg miles="{{ miles }}" gallons="1"></display-mpg>
+      <br/>
     </div>
   </template>
 

@@ -1,19 +1,20 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<dom-module id="display-miles">
-  <template> <span>{{ miles }}</span> </template>
+<dom-module id="kilometers-to-miles">
   <script>
       Polymer({
-        is: 'display-miles',
+        is: 'kilometers-to-miles',
         properties: {
           km: {
             type: Number
           },
           miles: {
             type: Number,
-            computed: 'kilometersToMiles(km)'
+            computed: 'kilometersToMiles(km)',
+            notify: true
           }
         },
         kilometersToMiles: function(km) {
+          console.log("converting km " + km);
           return Math.round(0.621371192 * km * 10) / 10.0;
         }
       });

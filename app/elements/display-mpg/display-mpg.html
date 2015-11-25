@@ -1,0 +1,23 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="display-mpg">
+  <template> <span> {{ miles }} </span> </template>
+  <script>
+      Polymer({
+        is: 'display-mpg',
+        properties: {
+          gallons: {
+            type: Number
+          },
+          miles: {
+            type: Number
+          },
+          mpg: {
+            type: Number
+          }
+        },
+        mpg: function(miles, gallons) {
+          return miles / gallons;
+        }
+      });
+  </script>
+</dom-module>
