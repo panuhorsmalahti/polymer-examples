@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="display-miles">
+  <template>
+    <style include="shared-styles"></style>
+    <span>{{ miles }}</span>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'display-miles',
+
+        properties: {
+          km: {
+            type: Number
+          },
+          miles: {
+            type: Number,
+            computed: 'kilometersToMiles(km)'
+          }
+        },
+        kilometersToMiles: function(km) {
+          return Math.round(0.621371192 * km * 10) / 10.0;
+        }
+      });
+    })();
+  </script>
+
+</dom-module>
