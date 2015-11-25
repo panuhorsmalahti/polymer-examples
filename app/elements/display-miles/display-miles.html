@@ -1,6 +1,10 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../app/elements/kilometers-to-miles/kilometers-to-miles.html">
 <dom-module id="display-miles">
-  <template> <span>{{ miles }}</span> </template>
+  <template>
+    <kilometers-to-miles km="{{ km }}" miles="{{ miles }}"></kilometers-to-miles>
+    <span>{{ miles }}</span>
+  </template>
   <script>
       Polymer({
         is: 'display-miles',
@@ -9,8 +13,7 @@
             type: Number
           },
           miles: {
-            type: Number,
-            computed: 'kilometersToMiles(km)'
+            type: Number
           }
         },
         kilometersToMiles: function(km) {
