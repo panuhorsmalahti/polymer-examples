@@ -1,0 +1,16 @@
+{
+  "name": "pml",
+  "version": "0.1.0",
+  "license": "BSD-like",
+  "ignore": [
+    "/.*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/panuhorsmalahti/pml.git"
+  },
+  "devDependencies": {
+    "polymer": "^1.2.0",
+    "jquery": "~2.1.4"
+  }
+}

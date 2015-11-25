@@ -1,0 +1,1 @@
+!function(e){"use strict";var r=e.querySelector("#app");r.baseUrl="/polymer-examples/"}(document);
