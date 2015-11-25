@@ -1,24 +1,30 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../app/elements/kilometers-to-miles/kilometers-to-miles.html">
+<link rel="import" href="../../elements/kilometers-to-miles/kilometers-to-miles.html">
 <dom-module id="display-miles">
   <template>
-    <kilometers-to-miles km="{{ km }}" miles="{{ miles }}"></kilometers-to-miles>
-    <span>{{ miles }}</span>
+    <span>{{ kilometersToMiles(km) }}</span>
   </template>
   <script>
-      Polymer({
-        is: 'display-miles',
-        properties: {
-          km: {
-            type: Number
-          },
-          miles: {
-            type: Number
-          }
-        },
-        kilometersToMiles: function(km) {
-          return Math.round(0.621371192 * km * 10) / 10.0;
+      require.config({
+        baseUrl: 'elements',
+        paths: {
+          'mile-service': 'mile-service/mile-service'
         }
+      });
+
+      define(['mile-service'], function(mileService) {
+        Polymer({
+          is: 'display-miles',
+          properties: {
+            km: {
+              type: Number
+            },
+            miles: {
+              type: Number
+            }
+          },
+          kilometersToMiles: mileService.kilometersToMiles
+        });
       });
   </script>
 </dom-module>
